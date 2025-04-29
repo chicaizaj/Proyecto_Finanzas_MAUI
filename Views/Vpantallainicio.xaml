@@ -4,12 +4,9 @@
              x:Class="Proyecto_Finanzas_MAUI.Views.Vpantallainicio"
              Title="Vpantallainicio">
 
-
+  
     <ScrollView>
-
         <VerticalStackLayout Padding="20" Spacing="20" BackgroundColor="#f5f5f5">
-
-            
 
             <!-- Título -->
             <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
@@ -21,44 +18,61 @@
             </HorizontalStackLayout>
 
             <!-- Selector -->
-            <Frame CornerRadius="10" BackgroundColor="White" Padding="10">
-                <Picker x:Name="TipoMovimientoPicker" Title="Tipo de Movimiento">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Ingreso</x:String>
-                            <x:String>Gasto</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
-            </Frame>
+            <Border BackgroundColor="White"
+                    Stroke="LightGray"
+                    StrokeShape="RoundRectangle 10"
+                    StrokeThickness="1">
+                <Grid Padding="10">
+                    <Picker x:Name="TipoMovimientoPicker" Title="Tipo de Movimiento" >
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Ingreso</x:String>
+                                <x:String>Gasto</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </Grid>
+            </Border>
 
             <!-- Monto -->
-            <Frame CornerRadius="10" BackgroundColor="White" Padding="10">
-                <HorizontalStackLayout Spacing="10">
+            <Border BackgroundColor="White"
+                    Stroke="LightGray"
+                    StrokeShape="RoundRectangle 10"
+                    StrokeThickness="1">
+                <HorizontalStackLayout Spacing="10" Padding="10">
                     <Image Source="https://img.icons8.com/fluency/48/cash-in-hand.png"
                            WidthRequest="24" HeightRequest="24" />
                     <Entry Placeholder="Monto" Keyboard="Numeric" />
                 </HorizontalStackLayout>
-            </Frame>
+            </Border>
 
             <!-- Categoría -->
-            <Frame CornerRadius="10" BackgroundColor="White" Padding="10">
-                <HorizontalStackLayout Spacing="10">
+            <Border BackgroundColor="White"
+                    Stroke="LightGray"
+                    StrokeShape="RoundRectangle 10"
+                    StrokeThickness="1">
+                <HorizontalStackLayout Spacing="10" Padding="10">
                     <Image Source="https://img.icons8.com/color/48/price-tag-euro.png"
                            WidthRequest="24" HeightRequest="24" />
                     <Entry Placeholder="Categoría" />
                 </HorizontalStackLayout>
-            </Frame>
+            </Border>
 
             <!-- Descripción -->
-            <Frame CornerRadius="10" BackgroundColor="White" Padding="10">
-                <Editor Placeholder="Descripción" HeightRequest="60" />
-            </Frame>
+            <Border BackgroundColor="White"
+                    Stroke="LightGray"
+                    StrokeShape="RoundRectangle 10"
+                    StrokeThickness="1">
+                <Editor Placeholder="Descripción" HeightRequest="60"  />
+            </Border>
 
             <!-- Fecha -->
-            <Frame CornerRadius="10" BackgroundColor="White" Padding="10">
-                <DatePicker />
-            </Frame>
+            <Border BackgroundColor="White"
+                    Stroke="LightGray"
+                    StrokeShape="RoundRectangle 10"
+                    StrokeThickness="1">
+                <DatePicker Padding="10" />
+            </Border>
 
             <!-- Botón -->
             <Button Text="Agregar Movimiento"
@@ -66,7 +80,7 @@
                     TextColor="White"
                     CornerRadius="10"
                     FontAttributes="Bold"
-                    Clicked="OnAgregarMovimientoClicked" />
+                    Clicked="Button_Clicked" />
 
             <!-- Movimientos Recientes -->
             <Label Text="Movimientos Recientes" FontSize="20" FontAttributes="Bold" />
@@ -74,7 +88,11 @@
             <CollectionView x:Name="MovimientosCollection">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame CornerRadius="15" Margin="5" Padding="10" BackgroundColor="#ffffff">
+                        <Border Stroke="LightGray"
+                                BackgroundColor="#ffffff"
+                                StrokeShape="RoundRectangle 15"
+                                Margin="5"
+                                Padding="10">
                             <Grid ColumnDefinitions="Auto, *, Auto">
                                 <Image Source="{Binding Tipo, Converter={StaticResource TipoToIconWebConverter}}"
                                        WidthRequest="32" HeightRequest="32" />
@@ -88,7 +106,7 @@
                                        TextColor="Black"
                                        VerticalOptions="Center" />
                             </Grid>
-                        </Frame>
+                        </Border>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

@@ -71,7 +71,7 @@
                     Stroke="LightGray"
                     StrokeShape="RoundRectangle 10"
                     StrokeThickness="1">
-                <DatePicker Padding="10" />
+                <DatePicker  />
             </Border>
 
             <!-- Botón -->

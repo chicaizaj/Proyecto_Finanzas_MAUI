@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto_Finanzas_MAUI.Views.Vregistrousuario"
+             Title="Vregistrousuario">
+    <VerticalStackLayout Padding="30" Spacing="10">
+
+        <Entry x:Name="txtusuario" Placeholder="Nombre de usuario" />
+        <Entry x:Name="txtcontrasena" Placeholder="Contraseña" IsPassword="True"/>
+        <Picker x:Name="pickerRol" Title="Seleccione rol">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                <x:String>administrador</x:String>
+                <x:String>usuario</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Button Text="Registrar" Clicked="Registrar_Clicked" 
+                    BackgroundColor="#26a69a"
+                    TextColor="White"
+                    CornerRadius="10"
+                    FontAttributes="Bold" />
+    </VerticalStackLayout>
+</ContentPage>
